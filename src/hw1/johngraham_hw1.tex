@@ -1,0 +1,164 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage{framed}
+\usepackage{geometry}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{setspace}
+
+\geometry{letterpaper,margin=1in}
+
+
+
+\begin{document}
+
+
+% header
+\begin{center}   
+\begin{framed}  
+CS 583 \\[2mm]  Homework 1\\[2mm]
+\textbf{John Graham} \\[2mm] I pledge my honor that I have abided by the Stevens Honor System
+\end{framed}
+\end{center}
+
+\vspace{5mm}
+\hrule
+\vspace{2mm}
+
+
+
+\begin{itemize}
+
+    \item[\textbf{Q1}] With $x = \begin{bmatrix}
+                                    4 & 0 & -1 & 2 \\
+                                    \end{bmatrix}^{T}$, calculate the following:
+    
+        \begin{enumerate}
+            \item Squared $\ell_{2}$-norm of $x$: \\
+                \[ \begin{split}
+                    \|x\|^{2}_{2} & = ((\sum_{i = 1}^{4} x_{i}^{2})^{1/2})^{2} \\
+                    & = \sum_{i = 1}^{4} x_{i}^{2} \\
+                    & = 4^2 + 0^2 + -1^2 + 2^2 \\
+                    & = 16 + 0 + 1 + 4 \\
+                    & \\
+                    \|x\|^{2}_{2} & = 21
+                   \end{split}
+                \]
+            
+            \item $\ell_{1}$-norm of $x$: \\
+                \[ \begin{split}
+                    \|x\|_{1} & = \sum_{i = 1}^{4} |x_{i}| \\
+                    & = 4 + 0 + |-1| + 2 \\
+                    & \\
+                    \|x\|^{1} & = 7
+                   \end{split}
+                \]
+
+            \item inner product of $x$ and $a$, $a = \begin{bmatrix}
+                                                        0 & -2 & 6 & 3 \\
+                                                        \end{bmatrix}^{T}$
+                \[ \begin{split}
+                    x \cdot a & = (4 * 0) + (0 * -2) + (-1 * 6) + (2 * 3) \\
+                    & = 0 + 0 - 6 + 6 \\ \\
+                    x \cdot a & = 0
+                   \end{split}
+                \]
+        \end{enumerate}
+
+        \vspace{2mm}
+        \hrule
+        \vspace{2mm}
+
+    \item[\textbf{Q2}] Calculate the following with $A \in \mathbb{R}^{2 \times 3}$ and $b \in \mathbb{R}^{3}$:
+
+        \begin{align*}
+            \mathbf{A} &= \begin{bmatrix}
+                6 & 1 & -2 \\
+                -5 & 0 & 8    
+            \end{bmatrix} & \mathbf{b} &= \begin{bmatrix} 1 \\ 3 \\ -2 \end{bmatrix}
+        \end{align*}
+
+
+        \begin{enumerate}
+            \item $\mathbf{Ab} = \begin{bmatrix}
+                13 \\
+                -21
+            \end{bmatrix}$
+
+            \item $\mathbf{AA^{T}} = \begin{bmatrix}
+                                        6 & 1 & -2 \\
+                                        -5 & 0 & 8    
+                                    \end{bmatrix} \begin{bmatrix}
+                                        6 & -5 \\
+                                        1 & 0 \\
+                                        -2 & 8   
+                                    \end{bmatrix} 
+                                    = \begin{bmatrix}
+                                        41 & -46 \\
+                                        -46 & 89
+                                    \end{bmatrix}$
+        \end{enumerate}
+
+
+    \vspace{2mm}
+    \hrule
+    \vspace{2mm}
+
+    \item[\textbf{Q3}] With $\mathbf{x} = \begin{bmatrix} x_1 & x_2 & x_3 \end{bmatrix}$ and $y = \frac{x_{1}^{2}}{2} + \log_{e} x_{2} - \frac{x_1}{x_3} = \frac{1}{2} x_1 + \log_{e} x_{2} - x_{1} x_{3}^{-1} $, calculate $\frac{dy}{d\mathbf{x}}$ at $\mathbf{x} = \begin{bmatrix} 7 & \frac{1}{4} & \frac{1}{3} \end{bmatrix}$:
+    
+        \[
+            \frac{dy}{d\mathbf{x}} = \begin{bmatrix} \frac{\partial y}{x_1} & \frac{\partial y}{x_2} & \frac{\partial y}{x_3} \end{bmatrix}
+        \]
+
+        \[
+            \begin{split}
+                \frac{\partial y}{x_1} & = x_{1} - x_{3}^{-1} \\
+                \frac{\partial y}{x_2} & = x_{2}^{-1} \\
+                \frac{\partial y}{x_3} & = x_{1} x_{3}^{-2}
+            \end{split}
+        \]
+
+        \[ 
+            \begin{split}
+                \frac{dy}{d\mathbf{x}} & = \begin{bmatrix} x_{1} - x_{3}^{-1} & x_{2}^{-1} & x_{1} x_{3}^{-2} \end{bmatrix} \\
+                & = \begin{bmatrix} 7 - (\frac{1}{3})^{-1} & (\frac{1}{4})^{-1} & 7 (\frac{1}{3})^{-2} \end{bmatrix} \\
+                & = \begin{bmatrix} 7 - 3 & 4 & 7 (9) \end{bmatrix} \\ \\
+                \frac{dy}{d\mathbf{x}} & = \begin{bmatrix} 4 & 4 & 63 \end{bmatrix}
+            \end{split}
+        \]
+
+
+    \vspace{2mm}
+    \hrule
+    \vspace{2mm}
+    
+    
+    \item[\textbf{Q4}] $\mathbf{X}$ is an $n \times d$ matrix, $\mathbf{y}$ is an $n \times 1$ vector, and $\mathbf{w}$ is a $d \times 1$ vector. Let $f(\mathbf{w}) = \|\mathbf{Xw} - \mathbf{y}\|_{2}^{2} + \lambda \|\mathbf{w}\|_{2}^{2}$. Calculate $\frac{\partial f(\mathbf{w})}{\partial \mathbf{w}}$. \\
+    
+    Derivative of some squared $\ell_{2}$ norm of $\mathbf{x}$:
+
+        % \[ \frac{\partial}{\partial \mathbf{x}} (\|\mathbf{x}\|_{2}^{2}) = \frac{\partial}{\partial \mathbf{x}} ((\sum_{i = 1}^{n} x_{i}^{2})^{1/2})^{2} =  \frac{\partial}{\partial \mathbf{x}} \sum_{i = 1}^{n} x_{i}^{2} = 2 \sum_{i = 1}^{n} x_{i}\]
+
+        \[ \frac{\partial}{\partial \mathbf{x}} (\|\mathbf{x}\|_{2}^{2}) = 2 \mathbf{x} \]
+
+    Separate the derivatives of each term of $f(\mathbf{w})$:
+
+        \[ \frac{\partial f(\mathbf{w})}{\partial \mathbf{w}} = \frac{\partial}{\partial \mathbf{w}} (\|\mathbf{Xw} - \mathbf{y}\|_{2}^{2}) + \frac{\partial}{\partial \mathbf{w}} (\lambda \|\mathbf{w}\|_{2}^{2}) \]
+
+    Starting with $\|\mathbf{Xw} - \mathbf{y}\|_{2}^{2}$, using the chain rule
+
+        \[ \frac{\partial}{\partial \mathbf{w}} (\|\mathbf{Xw} - \mathbf{y}\|_{2}^{2}) = \mathbf{X} * (2 (\mathbf{Xw} - \mathbf{y})) = 2 (\mathbf{X}^{T} \mathbf{Xw} - \mathbf{X}^{T} \mathbf{y}) \]
+
+    Now $\lambda \|\mathbf{w}\|_{2}^{2}$:
+
+        \[ \frac{\partial}{\partial \mathbf{w}} (\lambda \|\mathbf{w}\|_{2}^{2}) = 2 \lambda \mathbf{w} \]
+
+    Finally, we have:
+
+        \[ \frac{\partial f(\mathbf{w})}{\partial \mathbf{w}} = 2 (\mathbf{X}^{T} \mathbf{Xw} - \mathbf{X}^{T} \mathbf{y}) + 2 \lambda \mathbf{w} = 2 (\mathbf{X}^{T} \mathbf{Xw} - \mathbf{X}^{T} \mathbf{y} + \lambda \mathbf{w}) \]    
+
+
+\end{itemize}
+
+
+\end{document}
